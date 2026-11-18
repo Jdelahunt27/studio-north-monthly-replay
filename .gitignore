@@ -1,0 +1,5 @@
+output/logs/
+output/video-tmp/
+output/checks/frame-*.png
+.claude/
+__pycache__/
