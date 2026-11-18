@@ -1,0 +1,324 @@
+{
+  "decision_timeline": [
+    {
+      "month": "2025-07",
+      "benchmark_cohort": "2025-02",
+      "pattern_matches_report": true,
+      "search_build_skill_clears_upper_icac": false,
+      "value_less_icac": {
+        "search|build_skill": 40.39,
+        "search|save_time": -76.6,
+        "partner|build_skill": 80.63,
+        "partner|save_time": -112.22
+      }
+    },
+    {
+      "month": "2025-08",
+      "benchmark_cohort": "2025-03",
+      "pattern_matches_report": true,
+      "search_build_skill_clears_upper_icac": false,
+      "value_less_icac": {
+        "search|build_skill": 42.1,
+        "search|save_time": -32.1,
+        "partner|build_skill": 100.53,
+        "partner|save_time": -125.78
+      }
+    },
+    {
+      "month": "2025-09",
+      "benchmark_cohort": "2025-04",
+      "pattern_matches_report": true,
+      "search_build_skill_clears_upper_icac": false,
+      "value_less_icac": {
+        "search|build_skill": 54.61,
+        "search|save_time": -26.55,
+        "partner|build_skill": 106.37,
+        "partner|save_time": -59.61
+      }
+    },
+    {
+      "month": "2025-10",
+      "benchmark_cohort": "2025-05",
+      "pattern_matches_report": true,
+      "search_build_skill_clears_upper_icac": false,
+      "value_less_icac": {
+        "search|build_skill": 91.89,
+        "search|save_time": -28.57,
+        "partner|build_skill": 88.83,
+        "partner|save_time": -63.21
+      }
+    },
+    {
+      "month": "2025-11",
+      "benchmark_cohort": "2025-06",
+      "pattern_matches_report": true,
+      "search_build_skill_clears_upper_icac": false,
+      "value_less_icac": {
+        "search|build_skill": 49.32,
+        "search|save_time": -32.61,
+        "partner|build_skill": 65.27,
+        "partner|save_time": -112.19
+      }
+    },
+    {
+      "month": "2025-12",
+      "benchmark_cohort": "2025-07",
+      "pattern_matches_report": true,
+      "search_build_skill_clears_upper_icac": true,
+      "value_less_icac": {
+        "search|build_skill": 133.35,
+        "search|save_time": -69.15,
+        "partner|build_skill": 60.49,
+        "partner|save_time": -82.22
+      }
+    }
+  ],
+  "first_month_pattern_matches_report": "2025-07",
+  "first_month_pattern_stable_through_dec_2025": "2025-07",
+  "first_month_matching_with_search_build_skill_above_upper_icac": "2025-12",
+  "value_to_cac_trend": [
+    {
+      "month": "2024-03",
+      "early_2024_ratio": 1.437,
+      "latest_three_ratio": 1.437,
+      "latest_three": [
+        "2024-01",
+        "2024-02",
+        "2024-03"
+      ],
+      "latest_three_forecast_share": 0.757
+    },
+    {
+      "month": "2024-04",
+      "early_2024_ratio": 1.517,
+      "latest_three_ratio": 1.53,
+      "latest_three": [
+        "2024-02",
+        "2024-03",
+        "2024-04"
+      ],
+      "latest_three_forecast_share": 0.771
+    },
+    {
+      "month": "2024-05",
+      "early_2024_ratio": 1.339,
+      "latest_three_ratio": 1.445,
+      "latest_three": [
+        "2024-03",
+        "2024-04",
+        "2024-05"
+      ],
+      "latest_three_forecast_share": 0.743
+    },
+    {
+      "month": "2024-06",
+      "early_2024_ratio": 1.376,
+      "latest_three_ratio": 1.57,
+      "latest_three": [
+        "2024-04",
+        "2024-05",
+        "2024-06"
+      ],
+      "latest_three_forecast_share": 0.745
+    },
+    {
+      "month": "2024-07",
+      "early_2024_ratio": 1.386,
+      "latest_three_ratio": 1.695,
+      "latest_three": [
+        "2024-05",
+        "2024-06",
+        "2024-07"
+      ],
+      "latest_three_forecast_share": 0.753
+    },
+    {
+      "month": "2024-08",
+      "early_2024_ratio": 1.391,
+      "latest_three_ratio": 1.934,
+      "latest_three": [
+        "2024-06",
+        "2024-07",
+        "2024-08"
+      ],
+      "latest_three_forecast_share": 0.77
+    },
+    {
+      "month": "2024-09",
+      "early_2024_ratio": 1.402,
+      "latest_three_ratio": 1.946,
+      "latest_three": [
+        "2024-07",
+        "2024-08",
+        "2024-09"
+      ],
+      "latest_three_forecast_share": 0.772
+    },
+    {
+      "month": "2024-10",
+      "early_2024_ratio": 1.425,
+      "latest_three_ratio": 2.077,
+      "latest_three": [
+        "2024-08",
+        "2024-09",
+        "2024-10"
+      ],
+      "latest_three_forecast_share": 0.78
+    },
+    {
+      "month": "2024-11",
+      "early_2024_ratio": 1.434,
+      "latest_three_ratio": 2.066,
+      "latest_three": [
+        "2024-09",
+        "2024-10",
+        "2024-11"
+      ],
+      "latest_three_forecast_share": 0.781
+    },
+    {
+      "month": "2024-12",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.19,
+      "latest_three": [
+        "2024-10",
+        "2024-11",
+        "2024-12"
+      ],
+      "latest_three_forecast_share": 0.782
+    },
+    {
+      "month": "2025-01",
+      "early_2024_ratio": 1.44,
+      "latest_three_ratio": 2.309,
+      "latest_three": [
+        "2024-11",
+        "2024-12",
+        "2025-01"
+      ],
+      "latest_three_forecast_share": 0.784
+    },
+    {
+      "month": "2025-02",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.451,
+      "latest_three": [
+        "2024-12",
+        "2025-01",
+        "2025-02"
+      ],
+      "latest_three_forecast_share": 0.783
+    },
+    {
+      "month": "2025-03",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.358,
+      "latest_three": [
+        "2025-01",
+        "2025-02",
+        "2025-03"
+      ],
+      "latest_three_forecast_share": 0.772
+    },
+    {
+      "month": "2025-04",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.316,
+      "latest_three": [
+        "2025-02",
+        "2025-03",
+        "2025-04"
+      ],
+      "latest_three_forecast_share": 0.765
+    },
+    {
+      "month": "2025-05",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.467,
+      "latest_three": [
+        "2025-03",
+        "2025-04",
+        "2025-05"
+      ],
+      "latest_three_forecast_share": 0.775
+    },
+    {
+      "month": "2025-06",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.674,
+      "latest_three": [
+        "2025-04",
+        "2025-05",
+        "2025-06"
+      ],
+      "latest_three_forecast_share": 0.784
+    },
+    {
+      "month": "2025-07",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 2.77,
+      "latest_three": [
+        "2025-05",
+        "2025-06",
+        "2025-07"
+      ],
+      "latest_three_forecast_share": 0.789
+    },
+    {
+      "month": "2025-08",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 3.09,
+      "latest_three": [
+        "2025-06",
+        "2025-07",
+        "2025-08"
+      ],
+      "latest_three_forecast_share": 0.795
+    },
+    {
+      "month": "2025-09",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 3.233,
+      "latest_three": [
+        "2025-07",
+        "2025-08",
+        "2025-09"
+      ],
+      "latest_three_forecast_share": 0.794
+    },
+    {
+      "month": "2025-10",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 3.423,
+      "latest_three": [
+        "2025-08",
+        "2025-09",
+        "2025-10"
+      ],
+      "latest_three_forecast_share": 0.797
+    },
+    {
+      "month": "2025-11",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 3.416,
+      "latest_three": [
+        "2025-09",
+        "2025-10",
+        "2025-11"
+      ],
+      "latest_three_forecast_share": 0.795
+    },
+    {
+      "month": "2025-12",
+      "early_2024_ratio": 1.439,
+      "latest_three_ratio": 3.476,
+      "latest_three": [
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "latest_three_forecast_share": 0.8
+    }
+  ],
+  "note": "Report recommendation pattern = value-before-CAC exceeds current iCAC for both build-skill cells and falls short for both save-time cells. Acquisition holdouts begin with the July 2025 wave, so no earlier month can support an iCAC-based allocation."
+}

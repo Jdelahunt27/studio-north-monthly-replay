@@ -1,0 +1,37 @@
+{
+  "as_of": "2025-09",
+  "cutoff_exclusive": "2025-10-01 00:00:00",
+  "rules": {
+    "people.csv": "record_created_at < CUTOFF",
+    "subscription_periods.csv": "renewal_due_at < CUTOFF",
+    "transactions.csv": "occurred_at < CUTOFF",
+    "product_events.csv": "occurred_at < CUTOFF",
+    "feedback.csv": "submitted_at < CUTOFF",
+    "campaign_spend.csv": "spend_date < CUTOFF",
+    "acquisition_attribution.csv": "credited_at < CUTOFF",
+    "channel_holdouts.csv": "followup_end_at <= CUTOFF"
+  },
+  "tables": {
+    "cohort_age_summary": {
+      "rows": 924,
+      "max_abs_difference": 0.0,
+      "match": true
+    },
+    "cohort_cash_economics": {
+      "rows": 231,
+      "max_abs_difference": 1.4210854715202004e-14,
+      "match": true
+    },
+    "company_totals": {
+      "rows": 21,
+      "max_abs_difference": 0.0,
+      "match": true
+    },
+    "channel_cac_completed_tests": {
+      "rows": 8,
+      "max_abs_difference": 2.842170943040401e-14,
+      "match": true
+    }
+  },
+  "all_match": true
+}

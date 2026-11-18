@@ -1,0 +1,37 @@
+{
+  "as_of": "2025-12",
+  "refit_status": "fitted",
+  "cohort_valuation_max_abs_difference": {
+    "ltv_before_cac_mean": 4.985167834092863e-11,
+    "ltv_before_cac_p05": 4.988010005035903e-11,
+    "ltv_before_cac_p95": 4.988010005035903e-11,
+    "net_ltv_mean": 4.922640073345974e-11,
+    "cac": 4.7691628424217924e-11,
+    "forecast_share": 4.029956923723432e-11
+  },
+  "payback_months_identical": true,
+  "decision": {
+    "partner|build_skill": {
+      "value_less_icac_report": 60.49,
+      "value_less_icac_replay": 60.49,
+      "abs_difference": 0.0049
+    },
+    "partner|save_time": {
+      "value_less_icac_report": -82.22,
+      "value_less_icac_replay": -82.22,
+      "abs_difference": 0.004
+    },
+    "search|build_skill": {
+      "value_less_icac_report": 133.35,
+      "value_less_icac_replay": 133.35,
+      "abs_difference": 0.0026
+    },
+    "search|save_time": {
+      "value_less_icac_report": -69.15,
+      "value_less_icac_replay": -69.15,
+      "abs_difference": 0.0026
+    }
+  },
+  "benchmark_cohort": "2025-07",
+  "matches_report": true
+}

@@ -1,0 +1,12 @@
+{
+ "as_of": "2024-02",
+ "seed": 20261116,
+ "steps": 3000,
+ "training_cells": 12,
+ "training_last_calendar_month": "2024-02-01",
+ "training_frame_sha256": "8bd7368aca406741be56e6e52923a0aefc4c76f376aa229daea117b6ff760c95",
+ "model": "cohort_lab.model._posterior (report model)",
+ "status": "not_fitted",
+ "reason": "Insufficient mature cohort cells for the two-part model",
+ "elapsed_seconds": 0.0
+}
