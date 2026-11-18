@@ -17,7 +17,7 @@ This implements prompt 4 of the course's *"What else to prompt after running the
 
 **Controls:** ◀ Prev / Next ▶ (or the arrow keys), the slider, ⏮ / ⏭ for the first and last month, ▶ Play to advance automatically, and ◐ to toggle dark mode. Hover any bar or cell for exact values. Each chart has a table view. Add `?month=2025-07` to the URL to open a given month.
 
-**Demo video:** [`demo/studio-north-replay-demo.webm`](demo/studio-north-replay-demo.webm) (about 2½ minutes, captioned, no audio).
+**Demo video:** [`demo/studio-north-replay-demo.webm`](demo/studio-north-replay-demo.webm) (2 min 29 s, with on-screen captions and a spoken narration). The voice is Windows' built-in text-to-speech (Microsoft Zira). The spoken script is in [`demo/narration.json`](demo/narration.json), and caption timings are in [`demo/cues.json`](demo/cues.json).
 
 ## How each as-of month is built
 
@@ -58,7 +58,17 @@ uv run --frozen --project ../customer-economics-lab python verify_cutoff.py --as
 uv run --frozen --project ../customer-economics-lab python verify_cutoff.py --as-of 2025-09
 uv run --frozen --project ../customer-economics-lab python build_dashboard.py
 node screenshot.mjs 2024-03 2025-07 2025-12                                        # optional visual QA
-node record_demo.mjs                                                               # optional: re-record the demo video
+```
+
+To re-record the narrated demo video (Windows; uses only the lab's pinned Playwright Chromium and built-in text-to-speech, with no external encoder):
+
+```bash
+node record_demo.mjs --script                                        # write demo/narration.json from the replay data
+powershell -ExecutionPolicy Bypass -File narrate.ps1 -Rate 1         # speak each line -> demo/narration/*.wav
+node record_demo.mjs                                                 # silent screen recording timed to the narration
+node mux_audio.mjs                                                   # combine video + narration in Chromium (VP8 + Opus)
+node fix_webm_duration.mjs demo/studio-north-replay-demo.webm 148900 # write the total duration into the WebM header
+node check_audio.mjs                                                 # confirm speech starts at each caption cue
 ```
 
 The data are the lab's original synthetic records (dataset 5.1), not private course data. Fixed operating costs and the causal long-run value of advertising are outside what these exports establish.

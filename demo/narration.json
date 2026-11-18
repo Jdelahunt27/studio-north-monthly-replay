@@ -1,0 +1,66 @@
+[
+ {
+  "id": "01",
+  "say": "This dashboard replays the Studio North report one month at a time, from January 2024 to December 2025."
+ },
+ {
+  "id": "02",
+  "say": "Each month shows only what management knew at that month's end. Solid marks are observed. Hatched marks are forecasts, refitted on data through that month."
+ },
+ {
+  "id": "03",
+  "say": "Step with Next and Previous, the arrow keys, the slider, or Play. Hover for exact values."
+ },
+ {
+  "id": "04",
+  "say": "In January 2024 the first cohort joins: 179 customers. With no renewals yet, the forecast is left blank."
+ },
+ {
+  "id": "05",
+  "say": "March 2024 is the first month with enough history to fit the model, using data through March only."
+ },
+ {
+  "id": "06",
+  "say": "Press Play to watch the retention triangle and the value bars grow."
+ },
+ {
+  "id": "07",
+  "say": "In the value chart, solid blue is observed contribution, hatched is forecast, and the black tick is each cohort's acquisition cost."
+ },
+ {
+  "id": "08",
+  "say": "By June 2025, newer cohorts keep more members. At age five: 47 percent for early 2024, versus 56 percent now."
+ },
+ {
+  "id": "09",
+  "say": "But no holdout test has finished yet, so we can't price an additional customer."
+ },
+ {
+  "id": "10",
+  "say": "July 2025 is the change that matters. The first holdout wave lets us compare value with the incremental cost of an extra customer. Both build skill cells clear it. Both save time cells fall short."
+ },
+ {
+  "id": "11",
+  "say": "So save time spending should be constrained or redesigned, even though every cohort clears its average acquisition cost."
+ },
+ {
+  "id": "12",
+  "say": "That pattern holds every month after. Until November, partner build skill had the larger margin."
+ },
+ {
+  "id": "13",
+  "say": "In December, search build skill moves ahead and clears even its pessimistic cost bound, matching the report's first priority."
+ },
+ {
+  "id": "14",
+  "say": "At December 2025, the replay reproduces the PDF's tables to the cent."
+ },
+ {
+  "id": "15",
+  "say": "And rebuilding any month from raw records cut off at that month gives the same view."
+ },
+ {
+  "id": "16",
+  "say": "Open the dashboard file in any browser. The code and checks are in this repository."
+ }
+]
