@@ -1,5 +1,7 @@
 output/logs/
 output/video-tmp/
 output/checks/frame-*.png
+demo/silent.webm
+demo/narration/
 .claude/
 __pycache__/
