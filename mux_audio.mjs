@@ -11,6 +11,7 @@ const { chromium } = require(path.join(here, "..", "customer-economics-lab", "to
 const demo = path.join(here, "demo");
 const { cues, total_ms } = JSON.parse(fs.readFileSync(path.join(demo, "cues.json"), "utf8"));
 const LEAD_MS = Number(process.env.LEAD_MS || 0);  // shift narration if the recording starts late
+const CLIP_EXT = process.env.CLIP_EXT || "wav";      // narration clip format: wav (Windows TTS) or mp3 (e.g. ElevenLabs)
 
 const page_html = `<!doctype html><html><body style="margin:0;background:#000">
 <video id="v" src="silent.webm" muted playsinline style="width:1280px;height:800px"></video>
@@ -20,7 +21,7 @@ window.mux = async (cues, lead) => {
   await new Promise(r => v.readyState >= 2 ? r() : v.addEventListener("loadeddata", r, { once: true }));
   const ac = new AudioContext({ sampleRate: 48000 });
   const dest = ac.createMediaStreamDestination();
-  const buffers = await Promise.all(cues.map(async c => ac.decodeAudioData(await (await fetch("narration/" + c.id + ".wav")).arrayBuffer())));
+  const buffers = await Promise.all(cues.map(async c => ac.decodeAudioData(await (await fetch("narration/" + c.id + "." + window.CLIP_EXT)).arrayBuffer())));
   const vs = v.captureStream();
   const stream = new MediaStream([...vs.getVideoTracks(), ...dest.stream.getAudioTracks()]);
   const rec = new MediaRecorder(stream, { mimeType: "video/webm;codecs=vp8,opus", videoBitsPerSecond: 900000, audioBitsPerSecond: 64000 });
@@ -47,8 +48,9 @@ await page.route("http://demo.local/**", async route => {
   if (rel === "" || rel === "index.html") return route.fulfill({ contentType: "text/html", body: page_html });
   const file = path.join(demo, rel);
   if (!file.startsWith(demo) || !fs.existsSync(file)) return route.fulfill({ status: 404, body: "" });
-  return route.fulfill({ contentType: rel.endsWith(".wav") ? "audio/wav" : "video/webm", body: fs.readFileSync(file) });
+  return route.fulfill({ contentType: rel.endsWith(".wav") ? "audio/wav" : rel.endsWith(".mp3") ? "audio/mpeg" : "video/webm", body: fs.readFileSync(file) });
 });
+await page.addInitScript(ext => { window.CLIP_EXT = ext; }, CLIP_EXT);
 await page.goto("http://demo.local/index.html");
 console.log(`muxing ${cues.length} narration clips into ${(total_ms / 1000).toFixed(0)}s of video (real time)...`);
 const result = await page.evaluate(([c, lead]) => window.mux(c, lead), [cues, LEAD_MS]);

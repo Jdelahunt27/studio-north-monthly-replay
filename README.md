@@ -50,14 +50,29 @@ The decision panel pairs current iCAC with the value before CAC of the latest co
 
 ## Reproduce
 
-These scripts use the lab's locked `uv` environment, so place this folder next to the extracted lab (`../customer-economics-lab`) after completing a guided run.
+**Dependencies** are managed with [uv](https://docs.astral.sh/uv/). `pyproject.toml` pins Python 3.12 and the exact library versions of the lab's own `uv.lock` (DuckDB, NumPy, pandas, SciPy, CPU JAX and NumPyro). `uv.lock` locks the complete environment. No GPU is needed.
+
+**Baseline inputs:** the scripts read the unchanged Studio North baseline from a checkout of the lab, by default `../customer-economics-lab` next to this folder; pass `--lab <path>` to use another location. From that checkout they read:
+- its model and data code (`cohort_lab/`), canonical SQL (`sql/`) and raw data (`data/`)
+- the saved exports of a completed guided run (`outputs/student/tables/`)
+
+1. Download the lab at the exact commit used here, [`0e40ce3`](https://github.com/longxiutian/customer-economics-lab/tree/0e40ce3cd0b788a3914ca4eb9f90d58ae1b62903) (the ZIP works; Git is not required). Complete its guided run (`uv run --frozen python student.py start`, then each checkpoint) so that `outputs/student/` exists.
+2. Put this repository next to it and run, from this folder:
 
 ```bash
-uv run --frozen --project ../customer-economics-lab python asof_refit.py          # 24 as-of refits (~1 min each on CPU; resumable)
-uv run --frozen --project ../customer-economics-lab python verify_cutoff.py --as-of 2025-03
-uv run --frozen --project ../customer-economics-lab python verify_cutoff.py --as-of 2025-09
-uv run --frozen --project ../customer-economics-lab python build_dashboard.py
-node screenshot.mjs 2024-03 2025-07 2025-12                                        # optional visual QA
+uv sync --frozen
+uv run --frozen python asof_refit.py                          # 24 as-of refits (~1-2 min each on CPU; resumable)
+uv run --frozen python verify_cutoff.py --as-of 2025-03       # cutoff-rebuild check
+uv run --frozen python verify_cutoff.py --as-of 2025-09
+uv run --frozen python build_dashboard.py                     # writes output/studio-north-monthly-replay.html + checks
+```
+
+On a OneDrive or other cloud-synced folder, set `UV_LINK_MODE=copy` first. Verified on Windows 11 with CPython 3.12.16: in this environment, a fresh Mar 2024 refit reproduces the committed `output/refits/2024-03.json` exactly, and rebuilding the dashboard gives a byte-identical HTML file.
+
+Optional visual QA, using Node 20+ and the lab's pinned Playwright (`npm ci --prefix tools` in the lab):
+
+```bash
+node screenshot.mjs 2024-03 2025-07 2025-12
 ```
 
 To re-record the narrated demo video (Windows; uses only the lab's pinned Playwright Chromium and built-in text-to-speech, with no external encoder):

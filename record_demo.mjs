@@ -85,7 +85,27 @@ const SPOKEN = {
   "15": "And rebuilding any month from raw records cut off at that month gives the same view.",
   "16": "Open the dashboard file in any browser. The code and checks are in this repository.",
 };
-scenes.forEach(s => { if (SPOKEN[s.id]) s.say = SPOKEN[s.id]; });
+// Energetic, conversational narration for a natural neural voice (`--style bold`). Original wording.
+const BOLD = {
+  "01": "Alright. This is Studio North, replayed one month at a time. January 2024 to December 2025. Let's go.",
+  "02": "Here's the rule. Every month shows only what management actually knew back then. Solid means it happened. Hatched means it's a forecast, built only from data up to that month.",
+  "03": "Next, previous, arrow keys, the slider, or just hit Play. Hover over anything for the exact numbers.",
+  "04": `January 2024. The first cohort walks in: ${jan.cohorts[0].n} customers. Nobody has renewed yet, so there's nothing to forecast. It stays blank.`,
+  "05": "March 2024. Now there's enough history. The model fits on data through March, and not one day more.",
+  "06": "Hit Play. Watch that retention triangle grow, and the value bars fill in.",
+  "07": "Read the value chart like this. Solid blue is money already earned. Hatched is the forecast. And the black line? That's what it cost to get each customer.",
+  "08": `June 2025. Newer customers stick around longer. At month five, early 2024 kept ${eRet} percent. Now? ${lRet} percent.`,
+  "09": "But look at the decision panel. Empty. No experiment has finished, so we still don't know what one extra customer really costs.",
+  "10": `July 2025. This is the month that matters. The first holdout test lands, and now we can price an extra customer for real. ${losers.length === 2 ? "Build skill? Worth more than it costs. Save time? Costs more than it's worth." : ""}`,
+  "11": "So stop pouring money into save-time campaigns. Fix them, or shrink them. Every cohort beats its average cost, but that average was hiding the problem.",
+  "12": "And that pattern holds, month after month. Until November, partner build skill had the bigger edge.",
+  "13": "December. Search build skill takes the lead, and clears even its worst-case cost. That's the report's top priority, earned.",
+  "14": recon.matches_report ? "December 2025 is where the report stops, and the replay matches the PDF. To the cent." : "December 2025 is where the report stops. Check the reconciliation note against the PDF.",
+  "15": "Rebuild any month from raw records cut off right there, and you get the exact same view. No peeking at the future.",
+  "16": "Open the dashboard file in any browser and explore. The code and the checks are in this repo.",
+};
+const style = process.argv.includes("--style") ? process.argv[process.argv.indexOf("--style") + 1] : "plain";
+scenes.forEach(s => { const t = (style === "bold" ? BOLD : SPOKEN)[s.id]; if (t) s.say = t; });
 
 if (process.argv.includes("--script")) {
   fs.writeFileSync(path.join(demo, "narration.json"), JSON.stringify(scenes.map(s => ({ id: s.id, say: s.say })), null, 1));
